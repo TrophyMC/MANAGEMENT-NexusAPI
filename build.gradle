@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'de.mecrytv.nexusapi'
-version = '1.0.0'
+version = '1.0.1'
 
 java {
     toolchain { languageVersion = JavaLanguageVersion.of(22) }
@@ -21,6 +21,9 @@ repositories {
 dependencies {
     api 'com.google.code.gson:gson:2.10.1'
     api 'de.mecrytv.databaseapi:DatabaseAPI:1.2.4'
+    api 'net.kyori:adventure-api:4.17.0'
+    api 'net.kyori:adventure-text-minimessage:4.17.0'
+    implementation 'de.mecrytv:LanguageAPI:1.0.0'
 }
 
 tasks.jar.enabled = false
