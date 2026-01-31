@@ -1,0 +1,31 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'de.mecrytv.nexusapi'
+version = '1.0.0'
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(22) }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url = "https://oss.sonatype.org/content/groups/public/" }
+    maven { url = 'https://jitpack.io' }
+}
+
+dependencies {
+    api 'com.google.code.gson:gson:2.10.1'
+    api 'de.mecrytv.databaseapi:DatabaseAPI:1.2.4'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
