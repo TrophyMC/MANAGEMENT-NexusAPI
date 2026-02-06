@@ -77,6 +77,10 @@ public class BanModel implements ICacheModel {
         this.ipAddress = (data.has("ipAddress") && !data.get("ipAddress").isJsonNull()) ? data.get("ipAddress").getAsString() : null;
     }
 
+    public boolean isActive() {
+        return banExpires == -1 || System.currentTimeMillis() < banExpires;
+    }
+
     public String getId() {
         return id;
     }

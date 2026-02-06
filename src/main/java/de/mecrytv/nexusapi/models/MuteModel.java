@@ -62,6 +62,10 @@ public class MuteModel implements ICacheModel {
         this.muteExpires = data.get("muteExpires").getAsLong();
     }
 
+    public boolean isActive() {
+        return muteExpires == -1L || System.currentTimeMillis() < muteExpires;
+    }
+
     public String getId() {
         return id;
     }
